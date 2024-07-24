@@ -3,7 +3,7 @@
   justify-content: space-between;
   @include responsive-max-width;
   @include text-styles(row, space-between, center);
-  margin: $padding-lg auto;
+  @include section-margin;
   padding: 0 $padding-base;
 
   .feature-left {
