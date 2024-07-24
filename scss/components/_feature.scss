@@ -1,0 +1,66 @@
+.feature {
+  display: flex;
+  justify-content: space-between;
+  @include responsive-max-width;
+  @include text-styles(row, space-between, center);
+  margin: $padding-lg auto;
+  padding: 0 $padding-base;
+
+  .feature-left {
+    max-width: 604px;
+    flex: 1;
+    padding-right: $padding-base;
+
+    h1 {
+      @include text-styles($font-weight-bold, 48px, 56px);
+      margin-bottom: $padding-base;
+    }
+
+    p {
+      @include text-styles($font-weight-regular, 18px, 28px);
+      margin-bottom: 24px;
+    }
+
+    button {
+      @include button-styles($black, $white, 16px 32px, 32px);
+
+      &:hover {
+        background-color: darken($black, 10%);
+      }
+    }
+  }
+
+  .feature-right {
+    flex: 1;
+    @include flex-center;
+
+
+    .grid {
+      @include flex-center(column, center, center);
+      gap: 36px;
+
+      .grid-one,
+      .grid-two {
+        flex: 1;
+        @include flex-center(row, center, center);
+        gap: 34px;
+
+        .grid-col {
+          display: flex;
+          flex-direction: column;
+          width: 286px;
+          height: 280px;
+          gap: $gap-base;
+
+          h3 {
+            @include text-styles($font-weight-bold, 24px, 32px);
+          }
+
+          p {
+            @include text-styles($font-weight-regular, $font-size-small, $line-height-base);
+          }
+        }
+      }
+    }
+  }
+}

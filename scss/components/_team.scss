@@ -1,0 +1,100 @@
+.team {
+    background-color: $black;
+    position: relative;
+  
+    .team-bg {
+      @include responsive-max-width;
+      margin-top: 400px;
+  
+      .banner-img {
+        position: absolute;
+        width: $max-width;
+        height: 675px;
+        @include flex-center;
+        margin: 116px auto;
+        top: -350px;
+        padding-bottom: 200px;      
+  
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+  
+      .team-para {
+        width: 1233px;
+        padding-top: 400px;
+        @include text-styles($font-weight-bold,$font-size-medium,$line-height-large);
+        display: flex;
+        flex-direction: column;
+  
+        span {
+          color: $yellow;
+        }
+  
+        p {
+          color: $white;
+        }
+      }
+  
+      .team-row-one {
+        @include flex-center;
+        gap: 32px;
+        @include section-margin;
+  
+        .img-card img {
+          width: 100%;
+          border-radius: 16px;
+        }
+      }
+  
+      .team-row-two {
+        max-width: $max-width;
+        @include flex-center(row,space-between, center);
+        padding-bottom: 108px;
+  
+        .two-col1 {
+          max-width: 703px;
+          @include flex-center(row,center, center);
+          gap: 32px;
+  
+          .col {
+            span {
+              @include text-styles($font-weight-bold, $font-size-medium,$line-height-large,$yellow);
+            }
+  
+            p {
+              @include text-styles($font-weight-regular, $font-size-sm,40px,$white);
+            }
+          }
+        }
+      }
+  
+      .two-col2 {
+        display: flex;
+        gap: 16px;
+  
+        p {
+          width: 215px;
+          @include text-styles($font-weight-medium, $font-size-sm,$line-height-medium,$white);
+          margin-bottom: 16px;
+     
+        }
+  
+        .arrow-icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          background-color: $yellow;
+          @include flex-center;
+  
+          i {
+            font-size: 24px;
+            width: 14px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+  

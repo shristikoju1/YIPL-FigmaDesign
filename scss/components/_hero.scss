@@ -1,0 +1,28 @@
+.hero {
+  @include responsive-max-width;
+  text-align: center;
+
+  .row {
+    height: 258px;
+    @include section-margin;
+    @include flex-center(row, space-between, center);
+    gap: 125px;
+
+    .para {
+      width: 850px;
+
+      p {
+        @include text-styles($font-weight-bold, $font-size-large, 80px, $black);
+        text-align: left;
+
+        span {
+          color: $yellow;
+        }
+      }
+    }
+
+    .group img {
+      width: 100%;
+    }
+  }
+}

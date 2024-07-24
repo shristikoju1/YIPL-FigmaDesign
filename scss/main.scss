@@ -1,0 +1,17 @@
+//utils
+@import 'utils/variables';
+
+//mixins
+@import 'mixins/mixins';
+
+//base
+@import 'base/reset';
+@import 'base/typography';
+
+//components
+@import 'components/navbar';
+@import 'components/hero';
+@import 'components/team';
+@import 'components/feature';
+@import 'components/engage';
+@import 'components/footer';

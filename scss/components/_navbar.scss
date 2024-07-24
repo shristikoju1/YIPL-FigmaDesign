@@ -1,0 +1,54 @@
+nav {
+    @include responsive-max-width;
+    @include flex-center(row, space-between, center);
+    height: 60px;
+    padding-top: $padding-lg;
+  
+    .menu-left {
+      @include flex-center(row, flex-start, center);
+      gap: $gap-xl;
+  
+      img {
+        width: 96px;
+        height: 32px;
+      }
+  
+      ul {
+        @include flex-center(row, flex-start, center);
+        gap: $gap-lg;
+  
+        li {
+          list-style-type: none;
+          @include text-styles($font-weight-medium,$font-size-small,$line-height-base,$white);
+  
+          a {
+            text-decoration: none;
+            color: $black;
+          }
+        }
+      }
+    }
+  
+    .menu-right {
+      @include flex-center(row, flex-start, center);
+      gap: $gap-xl;
+  
+      p {
+        @include text-styles($font-weight-medium);
+  
+        a {
+          text-decoration: none;
+          color: $white;
+        }
+      }
+  
+      button {
+        @include button-styles;
+        
+        span {
+          @include text-styles($font-weight-medium, 14px, 20px, #fff);
+        }
+      }
+    }
+  }
+  

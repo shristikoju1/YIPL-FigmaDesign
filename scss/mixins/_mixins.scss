@@ -1,0 +1,37 @@
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin responsive-max-width {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+  
+  @mixin text-styles($weight: $font-weight-regular, $size: $font-size-small, $line-height: $line-height-base, $color: $black) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line-height;
+    color: $color;
+  }
+  
+  @mixin button-styles($bg-color: $black, $color: $white, $padding: $padding-base, $radius: 32px) {
+    background-color: $bg-color;
+    color: $color;
+    padding: $padding;
+    border-radius: $radius;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @mixin section-padding($top: 116px, $bottom: 116px) {
+    padding: $top 0 $bottom;
+  }
+
+  @mixin section-margin($top: 113px, $bottom: 116px) {
+    margin: $top auto $bottom auto;
+  }
+
+  

@@ -1,0 +1,26 @@
+.engage {
+  max-width: $max-width;
+  max-height: 420px;
+  border-radius: $border-radius-base;
+  background-color: $black;
+  @include section-margin;
+  @include section-padding;
+  @include flex-center(column, center, center);
+  gap: 24px;
+
+  h1 {
+    @include text-styles($font-weight-bold, 56px, 64px, $white);
+  }
+
+  p {
+    @include text-styles($font-weight-regular, $font-size-small, $line-height-base, $white);
+  }
+
+  button {
+    @include button-styles($yellow, $black, $padding-base, $border-radius-base);
+    width: 145px;
+    height: 52px;
+    border: 2px solid $black;
+    @include text-styles($font-weight-medium, 14px, 20px, $black);
+  }
+}
