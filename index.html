@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <nav>
+    <nav class="wrapper">
       <div class="menu-left">
         <div class="logo">
           <img src="./assests/logo.svg" alt="logo" class="logo" />
@@ -30,12 +30,15 @@
       </div>
       <div class="menu-right">
         <p><a href="#">Become a member</a></p>
-        <button><span>Sign in</span></button>
+        <a class="signup-btn" href="./form/signup.html">Sign in</a>
+        <button class="hamburger" id="hamburger">
+          <img src="./assests//menu.svg" alt="menu">
+        </button>
       </div>
     </nav>
 
     <!-- Hero section -->
-    <section class="hero">
+    <section class="hero wrapper">
       <div class="row">
         <div class="para">
           <p>
@@ -50,11 +53,11 @@
 
     <!-- Team section -->
     <section class="team">
-      <div class="team-bg">
+      <div class="team-bg wrapper">
         <div class="banner-img">
           <img src="./assests/img.png" alt="banner-img" />
         </div>
-        <div class="team-para">
+        <div class="team-para ">
           <span>Get direct</span>
           <p>knowledge and insight.</p>
         </div>
@@ -95,9 +98,9 @@
     </section>
 
     <!-- Feature section -->
-    <section class="feature">
+    <section class="feature wrapper">
       <div class="feature-left">
-        <h1>Why become a creator?</h1>
+        <h2>Why become a creator?</h2>
         <p>
           Engage with your supporter and subscriber to sell your skills,
           knowledge and passions
@@ -108,11 +111,6 @@
         <div class="grid">
           <div class="grid-one">
             <div class="grid-col">
-              <!-- <div class="target-block">
-                            <div class="ellipse outer"></div>
-                            <div class="ellipse middle"></div>
-                            <div class="ellipse inner"></div>
-                        </div> -->
               <div class="feature-img">
                 <img src="./assests/feature1.svg" alt="img" />
               </div>
@@ -148,15 +146,17 @@
     </section>
 
     <!-- Engage card -->
-    <section class="engage">
-      <h1>Engage without limits</h1>
-      <p>
-        Join a growing community and talk directly with your favorites creators
-      </p>
-      <button>Get Started</button>
+    <section class="wrapper">
+      <section class="engage">
+        <h1>Engage without limits</h1>
+        <p>
+          Join a growing community and talk directly with your favorites creators
+        </p>
+        <button>Get Started</button>
+      </section>
     </section>
 
-    <footer class="footer">
+    <footer class="footer wrapper">
       <div class="footer-left">
         <div class="logo">
           <img src="./assests/logo.svg" alt="logo" />

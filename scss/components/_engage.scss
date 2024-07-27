@@ -1,9 +1,10 @@
 .engage {
   max-width: $max-width;
-  max-height: 420px;
+  height: 420px;
   border-radius: $border-radius-base;
   background-color: $black;
   @include section-margin;
+      padding: 0px 100px;
   @include section-padding;
   @include flex-center(column, center, center);
   gap: 24px;
@@ -17,10 +18,79 @@
   }
 
   button {
-    @include button-styles($yellow, $black, $padding-base, $border-radius-base);
+    @include button-styles($yellow, $black, $padding-base, 32px);
     width: 145px;
     height: 52px;
     border: 2px solid $black;
     @include text-styles($font-weight-medium, 14px, 20px, $black);
+
+    &:hover{
+      background-color: $black;
+      color: $white;
+      border: 2px solid $yellow;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .engage {
+    padding: 0px 80px;
+    height: auto;
+    h1 {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .engage {
+    padding: 0px 60px;
+    h1 {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .engage {
+    padding: 0px 40px;
+    h1 {
+      font-size: 36px;
+      line-height: 44px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    button {
+      width: 130px;
+      height: 48px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .engage {
+    padding: 0px 20px;
+    h1 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    p {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    button {
+      width: 120px;
+      height: 44px;
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 }

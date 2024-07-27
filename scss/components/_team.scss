@@ -7,13 +7,12 @@
       margin-top: 400px;
   
       .banner-img {
+        width: 1040px;
         position: absolute;
-        width: $max-width;
-        height: 675px;
         @include flex-center;
         margin: 116px auto;
-        top: -350px;
-        padding-bottom: 200px;      
+        top: -370px;
+        padding-bottom: 200px; 
   
         img {
           width: 100%;
@@ -22,7 +21,7 @@
       }
   
       .team-para {
-        width: 1233px;
+        width: 100%;
         padding-top: 400px;
         @include text-styles($font-weight-bold,$font-size-medium,$line-height-large);
         display: flex;
@@ -87,6 +86,13 @@
           border-radius: 50%;
           background-color: $yellow;
           @include flex-center;
+
+          & :hover{
+            background-color: blue;
+            cursor: pointer;
+          }
+           
+        
   
           i {
             font-size: 24px;
@@ -97,4 +103,49 @@
       }
     }
   }
+
+
+@media (max-width: 1240px) {
+  .team .team-bg .banner-img {
+    // width: 100vw;
+    top: -350px;
+
+    transform: translateX(-45px);
+
+    img {
+      max-width: 1000px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .team .team-bg .banner-img {
+    max-width: 1000px;
+    top: -350px;
+
+    transform: translateX(-130px);
+
+    img {
+      max-width: 800px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .team .team-bg .banner-img {
+    width: 100vw;
+    top: -350px;
+
+    transform: translateX(-115px);
+
+    img {
+      width: 700px;
+      object-fit: cover;
+    }
+  }
+}
+
+
   

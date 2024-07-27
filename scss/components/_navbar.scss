@@ -1,54 +1,146 @@
 nav {
-    @include responsive-max-width;
-    @include flex-center(row, space-between, center);
-    height: 60px;
-    padding-top: $padding-lg;
-  
-    .menu-left {
+  @include responsive-max-width;
+  @include flex-center(row, space-between, center);
+  padding: 32px;
+  position: fixed;
+  background-color: $white;
+  width: 100vw;
+  z-index: 100;
+  height: 80px;
+
+  .menu-left {
+    @include flex-center(row, flex-start, center);
+    gap: $gap-xl;
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 96px;
+      height: 32px;
+    }
+
+    ul {
       @include flex-center(row, flex-start, center);
-      gap: $gap-xl;
-  
-      img {
-        width: 96px;
-        height: 32px;
-      }
-  
-      ul {
-        @include flex-center(row, flex-start, center);
-        gap: $gap-lg;
-  
-        li {
-          list-style-type: none;
-          @include text-styles($font-weight-medium,$font-size-small,$line-height-base,$white);
-  
-          a {
-            text-decoration: none;
-            color: $black;
+      gap: $gap-lg;
+
+      li {
+        list-style-type: none;
+        @include text-styles($font-weight-medium, $font-size-small, $line-height-base, $white);
+
+        a {
+          text-decoration: none;
+          color: $black;
+
+          &:hover {
+            color: $yellow;
           }
         }
       }
     }
-  
-    .menu-right {
-      @include flex-center(row, flex-start, center);
-      gap: $gap-xl;
-  
-      p {
-        @include text-styles($font-weight-medium);
-  
-        a {
-          text-decoration: none;
-          color: $white;
-        }
-      }
-  
-      button {
-        @include button-styles;
-        
-        span {
-          @include text-styles($font-weight-medium, 14px, 20px, #fff);
+  }
+
+  .menu-right {
+    @include flex-center(row, flex-start, center);
+    gap: $gap-xl;
+
+    p {
+      @include text-styles($font-weight-medium);
+
+      a {
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+          color: $yellow;
         }
       }
     }
+
+    .signup-btn {
+      @include button-styles;
+      text-decoration: none;
+      padding: 14px 28px;
+
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+      }
+
+      span {
+        @include text-styles($font-weight-medium, 14px, 20px, #fff);
+      }
+    }
+
+    .hamburger {
+      display: none;
+      position: relative;
+      width: 35px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      z-index: 101;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
-  
+}
+
+@media (max-width: 960px) {
+  .menu-left ul li {
+    display: none;
+  }
+
+  .menu-right p,
+  .menu-right a {
+    display: none;
+  }
+
+  .menu-right .hamburger {
+    display: block;
+  }
+
+  .menu-left ul.active li,
+  .menu-right.active p,
+  .menu-right.active a {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: $padding-base;
+    height: auto;
+  }
+
+  .menu-left,
+  .menu-right {
+    flex-direction: column;
+    gap: $gap-base;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .menu-left ul {
+    flex-direction: column;
+    gap: $gap-base;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-left,
+  .menu-right {
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-left ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

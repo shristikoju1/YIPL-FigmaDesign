@@ -14,6 +14,7 @@
     font-weight: $weight;
     font-size: $size;
     line-height: $line-height;
+    border: none;
     color: $color;
   }
   
@@ -33,5 +34,21 @@
   @mixin section-margin($top: 113px, $bottom: 116px) {
     margin: $top auto $bottom auto;
   }
+
+
+
+// Media queries
+// @mixin media-breakpoint-one($breakpoint: $screen-large) {
+//   @media (max-width: $breakpoint) {
+//     max-width: 1000px;
+//     padding: 20px 26px;
+//   }
+// }
+
+// @mixin media-breakpoint-up($breakpoint: $screen-sm) {
+//   @media (min-width: $breakpoint) {
+//     @content;
+//   }
+// }
 
   
