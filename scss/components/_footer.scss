@@ -1,11 +1,12 @@
 .footer {
   @include responsive-max-width;
-  margin: $padding-lg auto;
+  padding: $padding-lg auto;
   display: flex;
-  max-width: 1024px;
+  @include flex-center(row, space-between, flex-start);
+
 
   .footer-left {
-    width: 424px;
+    width: 250px;
     @include flex-center(column, space-between, flex-start);
     gap: 76px;
 
@@ -34,13 +35,13 @@
 
   .footer-right {
     display: flex;
-    gap: $gap-lg;
+    gap: 40px;
 
     .col {
-      min-width: 180px;
+      max-width: 280px;
       display: flex;
       flex-direction: column;
-      gap: $gap-base;
+      gap: 20px;
 
       h3 {
         @include text-styles($font-weight-bold, 18px, 24px, $black);
@@ -68,169 +69,83 @@
   }
 }
 
-/* hamburger side */
-.hamburger {
-  position: relative;
-  display: block;
-  width: 35px;
-  cursor: pointer;
-
-  appearance: none;
-  background: none;
-  outline: none;
-  border: none;
-  z-index: 101;
-}
-
-.hamburger .bar,
-.hamburger:after,
-.hamburger:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5px;
-  background-color: #fff;
-  margin: 6px 0px;
-  transition: 0.4s;
-}
-
-.hamburger.is-active {
-  position: fixed;
-  right: 5vw;
-}
-
-.hamburger.is-active:before {
-  transform: rotate(-45deg) translate(-8px, 6px);
-  background-color: white;
-}
-
-.hamburger.is-active:after {
-  transform: rotate(45deg) translate(-9px, -8px);
-  background-color: white;
-}
-
-.hamburger.is-active .bar {
-  opacity: 0;
-  color: white;
-}
-
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -30%;
-  width: 30%;
-  min-height: 100vh;
-  display: block;
-  z-index: 98;
-  background-color: #003366;
-  padding-top: 120px;
-  transition: 0.4s;
-  margin: auto;
-}
-
-.mobile-nav.is-active {
-  right: 0;
-}
-
-.mobile-nav a {
-  display: block;
-  width: 100%;
-  max-width: 200px;
-  margin: 0 auto 2rem;
-
-  padding: 0.8rem 1.2rem;
-
-  color: #fff;
-  text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-}
-
-.mobile-nav a {
-  font-size: 1.25rem;
-  line-height: 1.2;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  gap: 0.96875rem;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  backdrop-filter: blur(10px);
-  z-index: 97;
-  display: none;
-}
-
-.overlay.is-active {
-  display: block;
-}
 
 
 
 @media (max-width: 1150px) {
   .footer {
+
     max-width: 950px;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(row,center, center);
     gap: 30px;
-    margin: 0 auto;
+    margin: 30px auto;
 
     .footer-right {
+      @include flex-center(row, space-between, flex-start);
       max-width: 750px;
 
       .col {
         max-width: 100%;
       }
     }
+    // .footer-left{
+    //   @include flex-center(column, space-between, flex-start);
+
+    // }
   }
 }
+
+// @media (max-width: 980px) {
+//   .footer {
+//     max-width: 650px;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 16px;
+//     margin: 0;
+
+//     .footer-right {
+//       max-width: 550px;
+//       gap: 14px;
+
+//       .col {
+//         max-width: 150px;
+
+//         ul {
+//           li{
+//             max-width: 155px;
+//           }
+//         }
+//       }
+
+    
+//     }
+//   }
+// }
 
 @media (max-width: 900px) {
   .footer {
-    max-width: 650px;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 0;
-
-    .footer-right {
-      max-width: 550px;
-
-      .col {
-        max-width: 50%;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
 
     .footer-left {
       order: 2;
-      width: 100%;
+      width: 150px;
       margin-top: $padding-lg;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
     }
 
     .footer-right {
       order: 1;
-      width: 100%;
+      width: 150px;
       display: flex;
       flex-direction: column;
-      gap: $gap-lg;
+      // gap: $gap-lg;
       align-items: flex-start;
+      justify-content: center;
     }
   }
 }

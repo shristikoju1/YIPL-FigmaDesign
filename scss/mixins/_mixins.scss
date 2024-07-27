@@ -27,8 +27,8 @@
     cursor: pointer;
   }
   
-  @mixin section-padding($top: 116px, $bottom: 116px) {
-    padding: $top 0 $bottom;
+  @mixin section-padding($top: 116px, $right: 0, $bottom: 116px, $left: 0) {
+    padding: $top 0 $bottom 0;
   }
 
   @mixin section-margin($top: 113px, $bottom: 116px) {

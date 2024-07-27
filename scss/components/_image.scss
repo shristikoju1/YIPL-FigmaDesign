@@ -1,0 +1,50 @@
+.image{
+@include responsive-max-width;
+@include flex-center(row, center, center);
+
+
+.banner-img {
+    width: $max-width; 
+    @include flex-center(row, center, center);
+    z-index: 1000;
+    margin-top: 350px;
+
+    img {
+      max-width: 1024px;
+      height: auto; 
+      object-fit: cover;
+      position: absolute;
+      top: 900; 
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+    .image{
+        .banner-img {
+            width: 85%; 
+            position: absolute;
+            top: 170px;
+        
+            img {
+              max-width: 100%;
+            }
+          }
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .image{
+        .banner-img {
+            width: 90%; 
+            position: absolute;
+            bottom: -50px;
+            padding-bottom: 15%;
+        
+            img {
+              max-width: 90%;
+            }
+          }
+    }
+}
