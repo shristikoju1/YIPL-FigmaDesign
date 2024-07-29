@@ -34,20 +34,24 @@ nav {
     }
 
     ul {
+      width: 100%;
       @include flex-center(row, flex-start, center);
       gap: $gap-lg;
 
       li {
+        
         list-style-type: none;
         @include text-styles($font-weight-medium, $font-size-small, $line-height-base, $white);
 
         a {
+          width: 100%;
           text-decoration: none;
           color: $black;
 
           &:hover {
             color: $yellow;
           }
+
         }
       }
     }
@@ -89,44 +93,150 @@ nav {
   }
 
   .hamburger {
-    float: left;
-    // margin-top: 100px;
-    
-    // display: block;
-    // position: relative;
-    width: 35px;
+    @include flex-center(row, center, center);
+    height: 32px;
+    width: 32px;
     cursor: pointer;
     background: none;
     border: none;
     z-index: 101;
+    display: none;
 
-    img {
-      width: 100%;
-      height: auto;
+    @media (max-width: 900px) {
+      
+      .navbar{
+        margin-top: 0 auto;
+        padding: 0 auto;
+    
+      .menu-left ul li {
+        display: none;
+      }
+    
+      .menu-right p,
+      .menu-right {
+        display: block;
+        .hamburger{
+          display: block;
+    
+        }
+    
+      }
+    
+    }
     }
   }
 }
 }
 
-@media (max-width: 960px) {
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 2000;
+  background-color: rgba(255, 255, 255, 0.694);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba($color:$black, $alpha: 0.1);
+  @include flex-center(column, flex-start, flex-start);
+  display: none;
+
+
+  .menu-left {
+    @include flex-center(column, center, center);
+    gap: $gap-xl;
+    margin-right: 32px;
+
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 96px;
+      height: 32px;
+    }
+
+  ul li{
+    width: 100%;
+    list-style-type: none;
+
+
+    a{
+      width: 100%;
+      text-decoration: none;
+
+    }
+  }
+
+}
+}
+
+@media (max-width: 900px) {
+
+  // .sidebar{
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   height: 100vh;
+  //   width: 250px;
+  //   z-index: 2000;
+  //   background-color: rgba(255, 255, 255, 0.694);
+  //   backdrop-filter: blur(10px);
+  //   box-shadow: -10px 0 10px rgba($color:$black, $alpha: 0.1);
+  //   @include flex-center(column, flex-start, flex-start);
+  
+  
+  //   .menu-left {
+  //     @include flex-center(column, center, center);
+  //     gap: $gap-xl;
+  //     margin-right: 32px;
+  
+  //     img {
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //       width: 96px;
+  //       height: 32px;
+  //     }
+  
+  //   ul li{
+  //     width: 100%;
+  //     list-style-type: none;
+  
+  
+  //     a{
+  //       width: 100%;
+  //       text-decoration: none;
+  
+  //     }
+  //   }
+  
+  // }
+  // }
+  .navbar{
+    height: 60px;
+    padding: 20px auto;
   .menu-left ul li {
     display: none;
   }
 
-  .menu-right p,
-  .menu-right a {
+  .menu-right p,.signup-btn{
     display: none;
   }
+  .menu-right {
+    .hamburger{
+      display: block;
+      z-index: 4000;
 
-  .menu-right .hamburger {
-    display: block;
+      img{
+        height: 30px;
+        width: 30px;
+      }
+
+    }
+
   }
 
-  .menu-left ul.active li,
-  .menu-right.active p,
-  .menu-right.active a {
-    display: block;
-  }
+}
 }
 
 @media (max-width: 768px) {

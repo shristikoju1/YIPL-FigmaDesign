@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   @include responsive-max-width;
-  @include text-styles(row, space-between, center);
   padding: 0 $padding-base 0 0;
   margin-top: 110px;
 
@@ -12,12 +11,12 @@
     padding-right: $padding-base;
 
     h2 {
-      @include text-styles($font-weight-bold, 48px, 56px);
+      @include text-styles($font-weight-bold, 48px, 56px, $black);
       margin-bottom: $padding-base;
     }
 
     p {
-      @include text-styles($font-weight-regular, 18px, 28px);
+      @include text-styles($font-weight-regular, 18px, 28px, $black);
       margin-bottom: 24px;
     }
 
@@ -53,11 +52,11 @@
           gap: $gap-base;
 
           h3 {
-            @include text-styles($font-weight-bold, 24px, 32px);
+            @include text-styles($font-weight-bold, 24px, 32px, $black);
           }
 
           p {
-            @include text-styles($font-weight-regular, $font-size-small, $line-height-base);
+            @include text-styles($font-weight-regular, $font-size-small, $line-height-base, $black);
           }
         }
       }
