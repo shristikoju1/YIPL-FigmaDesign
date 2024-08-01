@@ -36,6 +36,7 @@
   .footer-right {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 
     .col {
       max-width: 280px;
@@ -70,99 +71,53 @@
 }
 
 
-
-
-@media (max-width: 1150px) {
+@media (max-width: 980px) {
   .footer {
-
-    max-width: 950px;
-    @include flex-center(row,center, center);
-    gap: 30px;
-    margin: 30px auto;
+    max-width: 650px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
 
     .footer-right {
-      @include flex-center(row, space-between, flex-start);
-      max-width: 750px;
+      max-width: 550px;
+      gap: 14px;
 
       .col {
-        max-width: 100%;
+        max-width: 150px;
+
+        ul {
+          li{
+            max-width: 155px;
+          }
+        }
       }
-    }
-    // .footer-left{
-    //   @include flex-center(column, space-between, flex-start);
-
-    // }
-  }
-}
-
-// @media (max-width: 980px) {
-//   .footer {
-//     max-width: 650px;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 16px;
-//     margin: 0;
-
-//     .footer-right {
-//       max-width: 550px;
-//       gap: 14px;
-
-//       .col {
-//         max-width: 150px;
-
-//         ul {
-//           li{
-//             max-width: 155px;
-//           }
-//         }
-//       }
 
     
-//     }
-//   }
-// }
-
-@media (max-width: 900px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .footer-left {
-      order: 2;
-      width: 150px;
-      margin-top: $padding-lg;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .footer-right {
-      order: 1;
-      width: 150px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
     }
   }
 }
 
 @media (max-width: 576px) {
   .footer {
-    .footer-left,
-    .footer-right {
-      width: 100%;
-    }
+    flex-direction: column;
 
     .footer-left {
+      order: 2;
       margin-top: $padding-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
     }
 
     .footer-right {
+      order: 1;
+      display: flex;
       flex-direction: column;
       align-items: flex-start;
+      justify-content: flex-start;
     }
   }
 }
+

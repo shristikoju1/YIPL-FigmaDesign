@@ -2,7 +2,7 @@ $black: #2b2730;
 $yellow: #ffb84c;
 $white:#fff;
 $font-family: "Poppins", sans-serif;
-$max-width: 1240px;
+$max-width: 1440px;
 $font-weight-bold: 700;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -26,3 +26,6 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
+//animation
+$animation: fade linear;
+$animation-timeline: view();

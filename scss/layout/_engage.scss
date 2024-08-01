@@ -2,19 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1040px;
   margin: 0 auto;
   padding: 0;
 }
 
 .engage-wrapper {
-  width: 1040px;
+  width: 100%;
   margin: 116px auto;
   @include flex-center(column, center, center);
   gap: 24px;
   padding: 116px;
   background-color: $black;
-  height: 420px;
   border-radius: $border-radius-base;
 
   h1 {
@@ -48,7 +46,6 @@
 
   .engage-wrapper {
     max-width: 850px;
-    // height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;

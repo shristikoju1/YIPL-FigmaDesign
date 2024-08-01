@@ -8,21 +8,28 @@
 @import 'base/reset';
 @import 'base/typography';
 
-//components
-@import 'components/navbar';
-@import 'components/hero';
-@import 'components/team';
-@import 'components/feature';
-@import 'components/engage';
-@import 'components/footer';
-@import 'components/image';
+//layout
+@import 'layout/navbar';
+@import 'layout/hero';
+@import 'layout/team';
+@import 'layout/feature';
+@import 'layout/engage';
+@import 'layout/footer';
+@import 'layout/image';
 
 .wrapper{
     max-width: $max-width;
     padding: 10px 100px;
-  
+
+    @media(max-width:700px){
+      padding: 5px 50px;
+    }
+    @media(max-width:470px){
+      padding: 2px 10px;
   }
+}
 
   .body{
     background: #000;
   }
+

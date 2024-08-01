@@ -5,8 +5,7 @@
     @include responsive-max-width;
 
     .team-para {
-      width: 100%;
-      padding-top: 5rem;
+      padding-top: 115px;
       @include text-styles(
         $font-weight-bold,
         $font-size-medium,
@@ -26,9 +25,14 @@
     }
 
     .team-row-one {
-      @include flex-center;
-      gap: 2rem;
       @include section-margin;
+      --min-column-size: 220px;
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(var(--min-column-size), 100%), 1fr)
+      );
 
       .img-card img {
         width: 100%;
@@ -37,10 +41,8 @@
     }
 
     .team-row-two {
-      max-width: $max-width;
       @include flex-center(row, space-between, center);
       padding-bottom: 6rem;
-      gap: 100px;
 
       .two-col1 {
         max-width: 70%;
@@ -58,12 +60,7 @@
           }
 
           p {
-            @include text-styles(
-              $font-weight-regular,
-              36px,
-              2.5rem,
-              $white
-            );
+            @include text-styles(400, 32px, 40px, $white);
           }
         }
       }
@@ -71,10 +68,10 @@
       .two-col2 {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 5px;
 
         p {
-          
           max-width: 250px;
           @include text-styles(500, 36px, 1.2, $white);
         }
@@ -108,15 +105,8 @@
   }
 }
 
-@media (max-width: 1240px) {
-
-  .team .team-bg .team-row-one {
-    gap: 1.5rem;
-  }
-
+@media (max-width: 1130px) {
   .team .team-bg .team-row-two .two-col1 {
-    gap: 1.5rem;
-
     .col span {
       @include text-styles(
         $font-weight-bold,
@@ -127,21 +117,12 @@
     }
 
     .col p {
-      @include text-styles(
-        $font-weight-regular,
-        $font-size-small,
-        2rem,
-        $white
-      );
+      @include text-styles(400, 32px, 40px, $white);
     }
   }
 }
 
-@media (max-width: 1000px) {
-
-  .team .team-bg .team-row-one {
-    gap: 0.8rem;
-  }
+@media (max-width: 1090px) {
 
   .team .team-bg .team-row-two {
     .two-col1 {
@@ -166,8 +147,9 @@
       }
     }
     .two-col2 {
-      gap: 5px;
+      gap: 0px;
       p {
+        width: 200px;
         font-size: 28px;
       }
     }
@@ -199,7 +181,6 @@
 
     .two-col2 {
       @include flex-center(row, center, center);
-      gap: 0.75rem;
 
       p {
         width: 170px;
@@ -209,7 +190,7 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .team .team-bg .team-para {
     padding-top: 10rem;
 
@@ -247,12 +228,7 @@
       }
 
       .col p {
-        @include text-styles(
-          $font-weight-regular,
-          20px,
-          1.25rem,
-          $white
-        );
+        @include text-styles($font-weight-regular, 20px, 1.25rem, $white);
       }
     }
 
@@ -263,7 +239,15 @@
       gap: 0.5rem;
 
       p {
-        width: auto;
+        font-size: 16px;
+        width: 110px;
+      }
+      .arrow-icon {
+        width: 40px;
+        height: 40px;
+        // border-radius: 50%;
+        // background-color: $yellow;
+        // @include flex-center;
       }
     }
   }
@@ -317,16 +301,45 @@
         );
       }
     }
-
     .two-col2 {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       text-align: center;
       gap: 0.5rem;
 
       p {
-        width: auto;
+        font-size: 16px;
+        width: 110px;
       }
+      .arrow-icon {
+        width: 25px;
+        height: 25px;
+
+        i {
+          @include flex-center(row, center, center);
+
+          font-size: small;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 385px) {
+    .team .team-bg .team-para {
+      padding-top: 60px;
+      span {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 40px;
+      }
+      p {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    .team-row-one {
+      margin-top: 32px;
     }
   }
 }

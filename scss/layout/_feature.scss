@@ -2,22 +2,21 @@
   display: flex;
   justify-content: space-between;
   @include responsive-max-width;
-  padding: 0 $padding-base 0 0;
   margin-top: 110px;
 
   .feature-left {
-    max-width: 504px;
+    max-width: 508px;
     flex: 1;
-    padding-right: $padding-base;
 
     h2 {
       @include text-styles($font-weight-bold, 48px, 56px, $black);
-      margin-bottom: $padding-base;
+      padding: 0 20px;
     }
 
     p {
-      @include text-styles($font-weight-regular, 18px, 28px, $black);
-      margin-bottom: 24px;
+      @include text-styles(400, 16px, 24px, $black);
+      margin: 24px 0;
+      padding: 0 20px
     }
 
     button {
@@ -32,7 +31,6 @@
 
   .feature-right {
     flex: 1;
-    @include flex-center;
 
     .grid {
       @include flex-center(column, center, center);
@@ -47,9 +45,10 @@
         .grid-col {
           display: flex;
           flex-direction: column;
-          width: 216px;
-          height: 280px;
           gap: $gap-base;
+          width: 286px;
+          padding: 0 20px;
+
 
           h3 {
             @include text-styles($font-weight-bold, 24px, 32px, $black);
@@ -63,14 +62,7 @@
     }
   }
 
-  // Media Queries for Responsiveness
-  @media (max-width: 1200px) {
-    .feature-left, .feature-right {
-      flex: 1 1 50%;
-    }
-  }
-
-  @media (max-width: 950px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
 
     .feature-left, .feature-right {
@@ -78,6 +70,15 @@
       padding-right: 0;
       flex: 1 1 100%;
       margin-top: 50px;
+    }
+
+    .feature-left{
+      flex-direction: column;
+
+      button{
+        @include button-styles($black, $white, 16px 32px, 32px);
+
+      }
     }
 
     .feature-right .grid {

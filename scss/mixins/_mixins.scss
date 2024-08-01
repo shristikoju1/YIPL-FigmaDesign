@@ -34,6 +34,12 @@
   @mixin section-margin($top: 113px, $bottom: 116px) {
     margin: $top auto $bottom auto;
   }
+  
+  @mixin responsive-text($size, $line-height) {
+    font-size: $size;
+    line-height: $line-height;
+  }
+  
 
 
   

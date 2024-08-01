@@ -1,0 +1,23 @@
+.image{
+@include flex-center(row, center, center);
+background: linear-gradient(
+  to top,
+  $black 0%,
+  $black 50%,
+  $white 50%,
+  $white 100%
+  );
+
+.banner-img {
+
+    @include flex-center(row, center, center);    
+    z-index: 1000;
+    margin: 0 auto;
+
+
+    img {
+      max-width: 100%;    
+      object-fit: cover;
+    }
+  }
+}
