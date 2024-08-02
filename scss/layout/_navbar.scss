@@ -90,6 +90,7 @@ nav {
         text-decoration: none;
         overflow: hidden;
         position: relative;
+        z-index: 10;
       }
       
       .signup-btn::before {
@@ -102,17 +103,22 @@ nav {
         background-color: $yellow;
         color: $black;
         transition: transform 0.3s ease;
-        z-index: 100;
-
+        z-index: -1;
       }
 
       .signup-btn::after{
         color: $black;
       }
       
-      .signup-btn:hover::before {
+      .signup-btn:hover{
+        color: $black;
+
+      
+      &::before {
         transform: translateY(-100%);
+        
       }
+    }
     }
 
     .hamburger {

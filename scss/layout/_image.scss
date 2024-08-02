@@ -1,4 +1,5 @@
 .image{
+  padding: 10px 100px;
 @include flex-center(row, center, center);
 background: linear-gradient(
   to top,
