@@ -91,6 +91,10 @@ nav {
         overflow: hidden;
         position: relative;
         z-index: 10;
+
+        @media (max-width: 600px){
+          display: none;
+        }
       }
       
       .signup-btn::before {

@@ -31,7 +31,7 @@
     padding: $top 0 $bottom 0;
   }
 
-  @mixin section-margin($top: 113px, $bottom: 116px) {
+  @mixin section-margin($top: 113px, $bottom: 80px) {
     margin: $top auto $bottom auto;
   }
   
